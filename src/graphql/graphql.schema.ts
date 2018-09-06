@@ -2,6 +2,8 @@ const { buildSchema } = require("graphql");
 import AdSchema from "./schemas/ad-schema";
 import AccountSchema from "./schemas/schema.account";
 import categorySchema from "./schemas/category-schema";
+import UserSchema from "./schemas/user-schema";
+import AddressSchema from "./schemas/address-schema";
 const { GraphQLString, GraphQLObject, GraphQLInt, GraphQLInputType } = require("graphql");
 
 const gqlSchema = buildSchema(`
@@ -21,6 +23,8 @@ const gqlSchema = buildSchema(`
         CreateCategory(catData: CategoryInput): Category
         RemoveCategory(qid: QueryId): Category
         UpdateCategory(qid: QueryId, update: CategoryInput): Category
+        CreateUser(user: userInput): User
+        CreateAddress(address: AddressInput): Address
     }
     input QueryId {
         id: String
@@ -28,6 +32,8 @@ const gqlSchema = buildSchema(`
     ${AdSchema()}
     ${AccountSchema()}
     ${categorySchema()}
+    ${UserSchema()}
+    ${AddressSchema()}
 `);
 
 export default gqlSchema;

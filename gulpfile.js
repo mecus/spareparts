@@ -42,8 +42,8 @@ gulp.task('serve-dev', function () {
             ext: 'js',
             watch: [src],
             stdout:   true,
-            readable: true,
-            env: {'NODE_ENV': 3000}
+            readable: true
+            // env: {'NODE_ENV': 3000}
         })
    
     stream

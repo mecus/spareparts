@@ -9,13 +9,6 @@ const AccountSchema = () => {
         isActivated: Boolean,
         addresses: [Address]
     }
-    type Address {
-        address: String,
-        city: String,
-        state: String,
-        country: String,
-        account_id: String
-    }
     input UserAccountInput {
         first_name: String,
         last_name: String,
